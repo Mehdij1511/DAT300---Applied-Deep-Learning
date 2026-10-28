@@ -2,143 +2,132 @@
 
 [![Course](https://img.shields.io/badge/Course-DAT300-blue)](https://github.com/Mehdij1511/DAT300---Applied-Deep-Learning)
 
-A portfolio-style deep learning project built as part of DAT300 - Applied Deep Learning.  
-This repository brings together practical assignments, experiments, and visualizations covering modern deep learning workflows across image analysis, segmentation, generative modeling, and text classification.
+A portfolio-style deep learning project built as part of DAT300 - Applied Deep Learning. It brings together applied exercises and visual experiments across image classification, semantic segmentation, generative modeling, and sentiment analysis.
 
 ![Project overview](docs/figures/project_overview.png)
 
-## Why this project exists
+## Table of Contents
+- [About this repo](#about-this-repo)
+- [The problem this project solves](#the-problem-this-project-solves)
+- [How it solves it](#how-it-solves-it)
+- [What we learned](#what-we-learned)
+- [Technology summary](#technology-summary)
+- [Quick start](#quick-start)
+- [Visualizations](#visualizations)
+- [How to contribute](#how-to-contribute)
+- [License](#license)
 
-Modern machine learning is no longer just about training a model once and hoping it works. Real-world problems require understanding:
-- how data is represented,
-- how models learn patterns,
-- how to diagnose poor performance,
-- how to interpret hidden activations,
-- and how to turn raw experiments into useful insights.
+## About this repo
 
-This project addresses that gap by teaching and demonstrating applied deep learning through a set of hands-on assignments:
+This repository contains course materials and student assignments for DAT300 - Applied Deep Learning. It is organized as a practical learning space where students can open assignments, run experiments locally, and generate visual explanations of how deep learning models learn.
 
-- Convolutional Neural Networks (CNNs)
-- Semantic segmentation with U-Net
-- Variational Autoencoders (VAEs)
-- Sentiment analysis using text embeddings and classification
+The goal is not only to complete the course assignment, but to understand:
+- how different deep learning architectures work,
+- how to inspect model behavior,
+- how to diagnose training problems,
+- and how to communicate results in an interpretable way.
 
-The problem this project solves is simple but important:
-> How do we move from deep learning theory into real, working, interpretable models that can solve practical tasks?
+This project turns theoretical concepts into hands-on work using real model-building patterns from modern deep learning practice.
 
 ---
 
-## What problem does it solve?
+## The problem this project solves
 
-In many beginner and intermediate ML workflows, the biggest challenge is not writing a model from scratch — it is asking the right questions:
+In applied machine learning, the hardest part is often not “can I write a model?” but:
+- How do I know if the model is learning the right thing?
+- Why is the model failing on some inputs?
+- What does the model actually see?
+- How can I explain or visualize its decisions?
+- How do I move from theory to a working pipeline?
 
-- What does the model actually learn?
-- Why is it failing on a certain class?
-- How do we inspect intermediate features?
-- How do we visualize losses, activations, reconstructions, and predictions?
-- How do we use deep learning methods responsibly and interpretably?
+This repository solves that by teaching deep learning through a set of focused, practical assignments:
 
-This repository solves that by turning abstract ideas into tangible workflows with:
-- clean experimental structure,
-- visual diagnostics,
-- reusable plotting utilities,
-- small teaching examples,
-- and assignment-oriented practical tasks.
+- CNNs for image understanding
+- U-Net for pixel-level segmentation
+- VAEs for latent representation learning
+- Sentiment analysis for text-based classification
+
+The central theme is:
+> Deep learning is not just about accuracy — it is about understanding, diagnosing, visualizing, and improving.
 
 ![Deep learning workflow](docs/figures/deep_learning_workflow.png)
 
 ---
 
-## How did it solve it?
+## How it solves it
 
-The project is organized around a set of applied deep learning tasks, each designed to teach a different concept while reinforcing a common workflow:
+The project is structured around practical tasks, each showing a different facet of deep learning.
 
 ### 1. CNNs: learning visual features
-The first major component focuses on convolutional neural networks for image classification and feature extraction.
+The first assignment focuses on convolutional neural networks and how they learn spatial structures in images.
 
-What was done:
-- trained or inspected CNN architectures,
-- analyzed filters and activation maps,
-- examined how early layers detect edges, textures, and shapes,
-- used learning curves to monitor training behavior.
+This includes:
+- feature extraction,
+- filter inspection,
+- activation visualization,
+- and understanding how early layers detect edges, shapes, and textures.
 
-Example result:
-- a model that learns spatial patterns from images,
-- a better intuition about why CNNs work well for vision tasks.
+![CNN filter map](docs/figures/conv_filters.png)
 
-![CNN feature maps](docs/figures/conv_filters.png)
+This helps the learner see that CNNs do not operate like black boxes. They transform raw pixels into increasingly meaningful representations.
 
-### 2. U-Net segmentation: localizing structure in images
-The second task focuses on semantic segmentation, where the model must classify each pixel rather than the whole image.
+### 2. U-Net segmentation: localizing structure
+The segmentation task shows how model outputs can be more detailed than simple classification labels. Instead of predicting a single class, the model predicts a mask for each pixel.
 
-What was done:
-- used U-Net as a segmentation architecture,
-- trained on labeled image masks,
-- overlayed predicted masks on original input images,
-- visually inspected segmentation quality.
+This teaches:
+- dense prediction,
+- spatial reasoning,
+- boundary detection,
+- and the importance of preserving detail in structured tasks.
 
-This is important because segmentation is not just classification; it requires spatial precision.
-
-![U-Net overlay](docs/figures/seg_overlay.png)
+![U-Net segmentation overlay](docs/figures/seg_overlay.png)
 
 ### 3. VAEs: learning latent representations
-The project also includes Variational Autoencoders, which are used to learn compact latent representations of data.
+Variational Autoencoders are used to compress inputs into a lower-dimensional latent space and reconstruct them from that compressed representation.
 
-What was done:
-- encoded input data into a latent space,
-- reconstructed original images from latent variables,
-- compared original vs reconstructed samples,
-- examined how latent structure can represent data variability.
-
-This helps students understand:
+This helps illustrate:
 - representation learning,
 - generative modeling,
-- latent space compression,
-- and the trade-off between reconstruction quality and smooth latent structure.
+- data compression,
+- and the relationship between structure and reconstruction quality.
 
-![VAE reconstruction](docs/figures/vae_recon.png)
+![VAE reconstructions](docs/figures/vae_recon.png)
 
-### 4. Sentiment analysis: text understanding with deep learning
-The final domain is natural language processing, where sentiment classification is taught through text-based models.
+### 4. Sentiment analysis: learning from text
+The text-based assignment explores how models can classify sentiment from word patterns and language structure.
 
-What was done:
-- analyzed text data,
-- transformed text into model-friendly representations,
-- classified sentiment categories,
-- visualized frequent words using word clouds.
+This introduces:
+- text preprocessing,
+- feature extraction,
+- class-based interpretation,
+- and the value of visual analysis through word clouds and frequency summaries.
 
-This demonstrates how deep learning extends beyond images into language tasks.
-
-![Wordcloud](docs/figures/wordcloud.png)
+![Sentiment wordcloud](docs/figures/wordcloud.png)
 
 ---
 
 ## What we learned
 
-This project was not just about implementing architectures. It was about learning how to reason with models.
+This project is not just about implementing architectures. It is about learning how to reason with models.
 
-### Lessons from the work:
-- Deep learning is not magic — it is a systematic process of data representation, model design, optimization, and interpretation.
-- Training curves reveal much more than accuracy scores.
-- Feature maps and latent-space visualizations make the model interpretable.
-- Generative models teach us how structure can be compressed and reconstructed.
-- Segmentation requires spatial understanding, not just classification.
-- Text models need careful handling of data preprocessing and vocabulary.
-- Visualization is essential. Without it, debugging deep learning systems becomes guesswork.
+### Key lessons
+- Deep learning depends on data quality, preprocessing, and architecture choices.
+- Training curves reveal more than accuracy alone.
+- Model inspection matters just as much as model performance.
+- Visualizations can reveal bias, underfitting, overfitting, or poor representation.
+- Generative models teach us about structure and compression.
+- Segmentation demands spatial understanding.
+- Text models require careful treatment of language structure and interpretation.
+
+A model is not “good” just because it reaches a high score. It is useful when we can explain how it behaves, where it fails, and what it is learning.
 
 ![Training curves](docs/figures/training.png)
-
-### Practical takeaways:
-- A model can be mathematically valid but still fail due to poor data quality.
-- Metrics alone are not enough; inspection matters.
-- Good deep learning work includes both predictive performance and qualitative understanding.
-- The best way to learn deep learning is to see the model “behave” on real data.
 
 ---
 
 ## Technology summary
 
-This project is built around a practical Python + deep learning stack, with a focus on learning and experimentation.
+This project uses a practical Python-based deep learning stack suitable for education and experimentation.
 
 Core technologies:
 - Python
@@ -153,44 +142,14 @@ Core technologies:
 - Pillow
 - WordCloud
 
-Supporting tooling:
-- Git and GitHub for versioning and collaboration
-- notebooks for reproducible experiments
-- plotting utilities for diagnostics and reporting
-- lightweight project structure for assignments and visual outputs
+These tools form a standard workflow for:
+- data preparation,
+- model training,
+- evaluation,
+- visualization,
+- and interpretation.
 
-This stack keeps the project accessible for students while also reflecting industry-standard workflow patterns for deep learning research and experimentation.
-
-![Tech stack illustration](docs/figures/tech_stack.png)
-
----
-
-## Repository structure
-
-```text
-DAT300---Applied-Deep-Learning/
-├── README.md
-├── CA2-ConvolutionalNeuralNetworks.pdf
-├── CA3-SegmanticSegmentationU-net.pdf
-├── CA4-VariationalAutoencoders.pdf
-├── CA5-SentimentAnalasys.pdf
-├── notebooks/
-│   └── (student notebooks and experiments)
-├── src/
-│   └── (scripts and model implementations)
-├── utils/
-│   └── (helpers and plotting utilities)
-├── docs/
-│   └── figures/
-│       ├── training.png
-│       ├── conv_filters.png
-│       ├── seg_overlay.png
-│       ├── vae_recon.png
-│       └── wordcloud.png
-├── requirements.txt
-└── .github/
-    └── workflows/
-```
+![Technology stack](docs/figures/tech_stack.png)
 
 ---
 
@@ -224,18 +183,25 @@ pip install jupyterlab
 jupyter lab
 ```
 
-5. Open the relevant notebook or script and reproduce the experiments.
+5. Open a notebook or script and reproduce the visualizations or experiments.
+
+To generate the figures locally from the repository code:
+
+```bash
+python scripts/generate_figures.py
+```
 
 ---
 
-## Example visualizations
+## Visualizations
 
-The repository includes a set of reusable plotting examples that can be dropped directly into notebooks:
+The project includes example visual outputs that help explain what the model is doing.
 
-### Training curves
+### Training curves (loss & accuracy)
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 sns.set(style='whitegrid')
 
 def plot_training(history, out_path='docs/figures/training.png'):
@@ -258,7 +224,7 @@ def plot_training(history, out_path='docs/figures/training.png'):
     plt.close(fig)
 ```
 
-### CNN filter inspection
+### CNN filters & feature maps
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -268,20 +234,18 @@ def show_filters(weight_tensor, n_cols=8, out_path='docs/figures/conv_filters.pn
     n = min(filters.shape[0], 64)
     n_rows = int(np.ceil(n / n_cols))
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(n_cols, n_rows))
-
     for i in range(n):
         ax = axes.flat[i]
         f = filters[i]
         img = f.mean(axis=0)
         ax.imshow((img - img.min()) / (img.max() - img.min()), cmap='viridis')
         ax.axis('off')
-
     plt.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
 ```
 
-### Segmentation overlay
+### U-Net segmentation overlay
 ```python
 import matplotlib.pyplot as plt
 
@@ -295,8 +259,9 @@ def overlay_segmentation(image, mask, alpha=0.5, out_path='docs/figures/seg_over
     plt.close()
 ```
 
-### VAE reconstruction
+### VAE reconstructions
 ```python
+import numpy as np
 import matplotlib.pyplot as plt
 
 def plot_reconstructions(x, x_recon, n=8, out_path='docs/figures/vae_recon.png'):
@@ -313,7 +278,7 @@ def plot_reconstructions(x, x_recon, n=8, out_path='docs/figures/vae_recon.png')
     plt.close()
 ```
 
-### Word cloud
+### Sentiment wordclouds
 ```python
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -330,63 +295,19 @@ def save_wordcloud(text, out_path='docs/figures/wordcloud.png'):
 
 ---
 
-## Why this matters
-
-This project is valuable because it demonstrates the full loop of applied deep learning:
-
-- understand the problem,
-- prepare the data,
-- design or choose the architecture,
-- train the model,
-- diagnose failure modes,
-- visualize results,
-- and communicate insights clearly.
-
-This is the same mindset used in real research, industry prototyping, and portfolio-building ML work.
-
-![Applied workflow](docs/figures/applied_workflow.png)
-
----
-
-## Portfolio-style summary
-
-This project represents an applied deep learning portfolio centered around:
-- image understanding,
-- generative modeling,
-- segmentation,
-- and NLP sentiment classification.
-
-It is designed to show not just theoretical knowledge, but also practical understanding:
-- how models are trained,
-- how visualizations help diagnose learning,
-- and how deep learning can be translated from concepts to results.
-
-The result is a repository that is both educational and portfolio-ready.
-
----
-
 ## How to contribute
 
-- Add runnable notebooks to `notebooks/`
-- Add scripts to `src/`
-- Add utilities to `utils/`
-- Save visual outputs to `docs/figures/`
-- Keep examples self-contained and reproducible
-- Avoid committing large datasets; prefer small fixtures or public sample data
-- Open a pull request with clear notes on what was added or improved
+- Add runnable notebooks to `notebooks/` that reproduce the figures and experiments in the assignments.
+- Add scripts to `src/` and helpers to `utils/`.
+- Save visual outputs to `docs/figures/` and reference them here.
+- Keep examples reproducible and easy to extend.
+- Do not commit large datasets; prefer small fixtures or public sample data.
+- Open a pull request with a clear explanation of what changed.
 
 ---
 
 ## License
 
-This repository is intended for academic and learning purposes.  
-Check with the course owner for project-specific licensing terms.
+This repository is intended for educational and course-related use. Check with the course owner for licensing details.
 
-If you want, I can also add an MIT license file or create a more polished version of this README with a stronger portfolio aesthetic and more specific project screenshots/section branding.
-
----
-
-If you’d like, I can:
-- add example notebooks that generate the visualizations above,
-- create a `requirements.txt` and CI workflow to run tests/docs,
-- generate and commit example figures into `docs/figures/` so the README shows images.
+![Applied deep learning workflow](docs/figures/applied_workflow.png)
