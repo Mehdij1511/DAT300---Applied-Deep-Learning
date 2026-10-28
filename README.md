@@ -191,6 +191,9 @@ To generate the figures locally from the repository code:
 python scripts/generate_figures.py
 ```
 
+The generator creates illustrative sample figures in `docs/figures/`; install
+the required plotting packages with `pip install -r requirements.txt`.
+
 ---
 
 ## Visualizations
